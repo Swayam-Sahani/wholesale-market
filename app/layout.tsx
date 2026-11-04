@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SiteAnalytics from "./components/site-analytics";
 import "./globals.css";
 
-const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+const googleSiteVerification = "_rIyVAJL_OVIz5TxV3UYIeftYa-neUAsfKeb0wv7orI";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://example.com"),
