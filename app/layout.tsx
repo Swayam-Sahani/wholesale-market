@@ -32,7 +32,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <Script
           id="google-tag-manager-loader"
-          src="https://www.googletagmanager.com/gtm.js?id=GTM-K7NHH8P6"
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-PC854C2R"
           strategy="beforeInteractive"
         />
         <Script id="google-tag-manager-init" strategy="beforeInteractive">
