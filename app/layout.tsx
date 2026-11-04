@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import SiteAnalytics from "./components/site-analytics";
 import "./globals.css";
 
@@ -29,6 +30,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body>
+        <Script
+          id="google-tag-manager-loader"
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-K7NHH8P6"
+          strategy="beforeInteractive"
+        />
+        <Script id="google-tag-manager-init" strategy="beforeInteractive">
+          {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());`}
+        </Script>
         {children}
         <SiteAnalytics />
       </body>
