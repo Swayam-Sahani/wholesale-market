@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import SiteAnalytics from "./components/site-analytics";
 import "./globals.css";
+
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://example.com"),
@@ -17,12 +20,18 @@ export const metadata: Metadata = {
     locale: "en_IN",
   },
   robots: { index: false, follow: false },
+  ...(googleSiteVerification
+    ? { verification: { google: googleSiteVerification } }
+    : {}),
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <SiteAnalytics />
+      </body>
     </html>
   );
 }
